@@ -1,0 +1,2 @@
+# Zen-Cart-Multilingual-EZ-Pages
+This module provides multi-language support for the EZ-Pages module that was included in the Zen Cart v1.3.0 release. The standard version does not support more than one language (even though there is a language_id field in the database table).  After installing this module you will be able to enter multi-lingual page/link titles and page content for each EZ-Page from a single admin page (multiple input fields will be present, allowing input for each language just as there is for categories and products).
