@@ -24,4 +24,3 @@ if (function_exists('zen_register_admin_page')) {
         zen_register_admin_page('multi_ezpages', 'BOX_MULTI_EZPAGES_INSTALL','FILENAME_MULTI_EZPAGES_INSTALL', '', 'tools', 'Y', 70);
     }
 }
-?>

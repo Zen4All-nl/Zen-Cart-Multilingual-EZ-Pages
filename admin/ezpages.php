@@ -395,7 +395,7 @@
         <td><table border="0" cellspacing="0" cellpadding="2">
           <tr>
             <td class="main"><?php echo TEXT_PAGES_TITLE; ?></td>
-            /* BOF Multilingual EZ Pages 9 of 12 */
+            <?php /* BOF Multilingual EZ Pages 9 of 12 */ ?>
             <td class="main">
 <?php
     $pages_title = '';
@@ -415,7 +415,7 @@
     }
 ?>
             </td>
-          /* EOF Multilingual EZ Pages 9 of 12 */
+          <?php /* EOF Multilingual EZ Pages 9 of 12 */ ?>
           </tr>
           <tr>
             <td colspan="2"><?php echo zen_draw_separator('pixel_trans.gif', '1', '10'); ?></td>
@@ -502,7 +502,7 @@
           </tr>
           <tr>
             <td valign="top" class="main"><?php echo TEXT_PAGES_HTML_TEXT; ?></td>
-            /* BOF Multilingual EZ Pages 10 of 12 */
+            <?php /* BOF Multilingual EZ Pages 10 of 12 */ ?>
             <td class="main">
 
 <?php
@@ -524,7 +524,7 @@
     }
 ?>
             </td>
-            /* EOF Multilingual EZ Pages 10 of 12 */
+            <?php /* EOF Multilingual EZ Pages 10 of 12 */ ?>
           </tr>
 
           <tr>
@@ -614,11 +614,11 @@
 /* BOF Multilingual EZ Pages 11 of 12 */
 
     /* BOF Multilingual EZ Pages 12 of 12 */
-    $pages_query_raw "SELECT e.*, et.pages_html_text
-                      FROM " . TABLE_EZPAGES . " e, " . TABLE_EZPAGES_TEXT . " et
-                      WHERE e.pages_id = et.pages_id
-                      AND et.languages_id = '" . (int)$_SESSION['languages_id'] . "'" .
-                      $ez_order_by;
+    $pages_query_raw = "SELECT e.*, et.*
+                        FROM " . TABLE_EZPAGES . " e, " . TABLE_EZPAGES_TEXT . " et
+                        WHERE e.pages_id = et.pages_id
+                        AND et.languages_id = '" . (int)$_SESSION['languages_id'] . "'" .
+                        $ez_order_by;
     /* BOF Multilingual EZ Pages 12 of 12 */
 
 // Split Page
