@@ -31,7 +31,7 @@ $sql = "SELECT e.*, et.*
         FROM  " . TABLE_EZPAGES . " e, " . TABLE_EZPAGES_TEXT . " et
         WHERE e.pages_id = " . (int)$ezpage_id . "
         AND et.languages_id = '" . (int)$_SESSION['languages_id'] . "'
-        AND e.pages_id = " . et.pages_id;
+        AND e.pages_id = et.pages_id";
 // comment the following line to allow access to pages which don't have a status switch set to Yes:
 $sql .= " AND (e.status_toc > 0 OR e.status_header > 0 OR e.status_sidebox > 0 OR e.status_footer > 0)";
 /* EOF Multilingual EZ Pages 1 of 3 */
