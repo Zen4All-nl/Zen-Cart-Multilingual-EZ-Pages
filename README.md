@@ -1,8 +1,8 @@
 Contribution:  Multi-Language Support for EZ-Pages
-Version: 1.5.1.2
-Designed for: Zen Cart v1.5.0 + (merged w/ 1.5.1 files)
+Version: 1.7
+Designed for: Zen Cart v1.5.0 + (merged w/ 1.5.5f files)
 Designed by: Neville Kerr (forum ID: bunyip)
-Updated by: Jack Huang (forum ID: neteasy)
+Updated by: Zen4All (forum ID: design75)
 License: under the GPL - See attached License for info.
 
 ========================================================
@@ -11,7 +11,7 @@ WHAT DOES THIS CONTRIBUTION DO?
 
 This contribution provides multi-language support for the EZ-Pages module that was included in the Zen Cart v1.3.0 release. The standard version does not support more than one language (even though there is a language_id field in the database table).
 
-After installing this module you will be able to enter multi-lingual page/link titles and page content for each EZ-Page from a single admin page (multiple input fields will be present, allowing input for each language just as there is for categories and products). 
+After installing this module you will be able to enter multi-lingual page/link titles and page content for each EZ-Page from a single admin page (multiple input fields will be present, allowing input for each language just as there is for categories and products).
 
 This latest update adds a new page to the Admin panel that simplifies the install/uninstall process and ensures a smooth transition multi-language support. It also provides a fix/repair facility for the new database table to resolve any problems that may have occurred as a result of incomplete installation of the initial release version.
 
@@ -25,14 +25,14 @@ INSTALLATION
 Step 1.  Unzip the archive file
 
 Step 2.  replace the following two CUSTOM folder with your own folder(template) name
-  includes\modules\CUSTOM
-  includes\modules\sideboxes\CUSTOM
+  includes\modules\YOUR_TEMPLATE
+  includes\modules\sideboxes\YUOR_TEMPLATE
 
-Step 3.  Make a copy of the included file 
-  admin/includes/languages/english/extra_definitions/ezpages_multilanguage_defines.php 
-and save it as 
-  admin/includes/languages/YOUR_LANGUAGE/extra_definitions/ezpages_multilanguage_defines.php
-then edit the two define statements in the file to suit your language. 
+Step 3.  Make a copy of the included file
+  admin/includes/languages/english/extra_definitions/ezpages_multilanguage_defines.php
+and save it as
+  YOUR_ADMIN/includes/languages/YOUR_LANGUAGE/extra_definitions/ezpages_multilanguage_defines.php
+then edit the two define statements in the file to suit your language.
 
 Step 4. Transfer all files into your Zen Cart folder. Path names have been included in the archive.
 
@@ -59,6 +59,7 @@ If you installed an earlier version of this contribution, you may experience pro
 
 History:
 
+2018-03-19 - v1.7 Multiple updates, zencartcode updated to 1.5.5f/1.5.6
 2012-09-26 - minor bugfix for filename and CUSTOM folder
 2012-09-21 - updated for Zen Cart v1.5.1
 2006-06-09 - v1.0.1 release - included install/repair/uninstall capability
@@ -84,9 +85,9 @@ FILES TO OVER-RIDE
 
 The following files go into your custom over-ride folders (replace CUSTOM with your own folder name):
 
-includes/modules/CUSTOM/ezpages_bar_footer.php
-includes/modules/CUSTOM/ezpages_bar_header.php
-includes/modules/sideboxes/CUSTOM/ezpages.php
+includes/modules/YOUR_TEMPLATE/ezpages_bar_footer.php
+includes/modules/YOUR_TEMPLATE/ezpages_bar_header.php
+includes/modules/sideboxes/YOUR_TEMPLATE/ezpages.php
 
 
 ========================================================
@@ -97,4 +98,3 @@ These two files overwrite existing files that don't have an over-ride capability
 
 includes/modules/pages/page/header_php.php
 admin/ezpages.php
-
