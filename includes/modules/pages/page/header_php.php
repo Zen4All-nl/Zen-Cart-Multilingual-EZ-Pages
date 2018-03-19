@@ -28,9 +28,10 @@ $chapter_link = (int)$_GET['chapter'];
 
 /* BOF Multilingual EZ Pages 1 of 3 */
 $sql = "SELECT e.*, et.*
-        FROM  " . TABLE_EZPAGES . " e, " . TABLE_EZPAGES_TEXT . " et
+        FROM " . TABLE_EZPAGES . " e,
+             " . TABLE_EZPAGES_TEXT . " et
         WHERE e.pages_id = " . (int)$ezpage_id . "
-        AND et.languages_id = '" . (int)$_SESSION['languages_id'] . "'
+        AND et.languages_id = " . (int)$_SESSION['languages_id'] . "
         AND e.pages_id = et.pages_id";
 // comment the following line to allow access to pages which don't have a status switch set to Yes:
 $sql .= " AND (e.status_toc > 0 OR e.status_header > 0 OR e.status_sidebox > 0 OR e.status_footer > 0)";
@@ -60,7 +61,7 @@ $pages_order_query = "SELECT e.*, et.*
                         AND e.toc_chapter= :chapterID )
                       AND e.alt_url_external = ''
                       AND e.alt_url = ''
-                      AND et.languages_id = '" . (int)$_SESSION['languages_id'] . "'
+                      AND et.languages_id = " . (int)$_SESSION['languages_id'] . "
                       AND e.pages_id = et.pages_id
                       ORDER BY e.toc_sort_order, e.pages_title";
 /* EOF Multilingual EZ Pages 2 of 3 */

@@ -18,13 +18,14 @@
       unset($var_linksList);
     }
     /* BOF Multilingual EZ Pages 1 of 1 */
-    $page_query = $db->Execute("select e.*, et.*
-                                from  " . TABLE_EZPAGES . " e, " . TABLE_EZPAGES_TEXT . " et
-                                where e.pages_id = et.pages_id
-                                and et.languages_id = '" . (int)$_SESSION['languages_id'] . "'
-                                and e.status_sidebox = 1
-                                and e.sidebox_sort_order > 0
-                                order by e.sidebox_sort_order, et.pages_title");
+    $page_query = $db->Execute("SELECT e.*, et.*
+                                FROM " . TABLE_EZPAGES . " e,
+                                     " . TABLE_EZPAGES_TEXT . " et
+                                WHERE e.pages_id = et.pages_id
+                                AND et.languages_id = " . (int)$_SESSION['languages_id'] . "
+                                AND e.status_sidebox = 1
+                                AND e.sidebox_sort_order > 0
+                                ORDER BY e.sidebox_sort_order, et.pages_title");
     /* EOF Multilingual EZ Pages 1 of 1 */
 
     if ($page_query->RecordCount()>0) {
