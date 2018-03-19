@@ -21,9 +21,10 @@ if (EZPAGES_STATUS_HEADER == '1' or (EZPAGES_STATUS_HEADER == '2' and (strstr(EX
   }
   /* BOF Multilingual EZ Pages 1 of 1 */
   $page_query = $db->Execute("SELECT e.*, et.*
-                              FROM " . TABLE_EZPAGES . " e, " . TABLE_EZPAGES_TEXT . " et
+                              FROM " . TABLE_EZPAGES . " e,
+                                   " . TABLE_EZPAGES_TEXT . " et
                               WHERE e.pages_id = et.pages_id
-	                            AND et.languages_id = '" . (int)$_SESSION['languages_id'] . "'
+	                            AND et.languages_id = " . (int)$_SESSION['languages_id'] . "
                               AND e.status_header = 1
                               AND e.header_sort_order > 0
                               ORDER BY e.header_sort_order, et.pages_title");

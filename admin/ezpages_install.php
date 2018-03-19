@@ -18,6 +18,7 @@
  * | license@zen-cart.com so we can mail you a copy immediately.          |
  * +----------------------------------------------------------------------+
  *  $Id: ezpages_install.php 2006-06-09 bunyip $
+ *  Update 2018-03-19 Zen4All
  *  install/repair/uninstall utility for multi-language EZ-Pages contribution
  */
 
@@ -71,9 +72,9 @@ if (zen_not_null($action)) {
           }
 
           $sql = "SELECT *
-              FROM " . TABLE_EZPAGES_TEXT . "
-              WHERE pages_id = " . (int) $pages->fields['pages_id'] . "
-              AND languages_id = " . (int) $languages[$i]['id'];
+                  FROM " . TABLE_EZPAGES_TEXT . "
+                  WHERE pages_id = " . (int) $pages->fields['pages_id'] . "
+                  AND languages_id = " . (int) $languages[$i]['id'];
 
           $check_query = $db->Execute($sql);
 
@@ -104,8 +105,9 @@ if (zen_not_null($action)) {
               $pages_html_text = (zen_not_null($check_query->fields['pages_html_text']) ? $check_query->fields['pages_html_text'] : $pages_html_text);
             }
 
-            $sql_update_array = array('pages_title' => $pages_title,
-                                      'pages_html_text' => $pages_html_text);
+            $sql_update_array = array(
+              'pages_title' => $pages_title,
+              'pages_html_text' => $pages_html_text);
 
             zen_db_perform(TABLE_EZPAGES_TEXT, $sql_update_array, 'update', "pages_id = '" . (int) $pages->fields['pages_id'] . "' and languages_id = '" . (int) $languages[$i]['id'] . "'");
           }
@@ -129,8 +131,9 @@ if (zen_not_null($action)) {
 
       while (!$pages_query->EOF) {
 
-        $sql_update_array = array('pages_title' => $pages_query->fields['pages_title'],
-                                  'pages_html_text' => $pages_query->fields['pages_html_text']);
+        $sql_update_array = array(
+          'pages_title' => $pages_query->fields['pages_title'],
+          'pages_html_text' => $pages_query->fields['pages_html_text']);
 
         zen_db_perform(TABLE_EZPAGES, $sql_update_array, 'update', 'pages_id = ' . $pages_query->fields['pages_id']);
 
@@ -152,7 +155,6 @@ if (zen_not_null($action)) {
     <script language="javascript" src="includes/menu.js"></script>
     <script language="javascript" src="includes/general.js"></script>
     <script type="text/javascript">
-      <!--
         function init() {
           cssjsmenu('navbar');
           if (document.getElementById) {
@@ -160,7 +162,6 @@ if (zen_not_null($action)) {
               kill.disabled = true;
           }
       }
-      // -->
     </script>
   </head>
   <body marginwidth="0" marginheight="0" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" bgcolor="#FFFFFF" onLoad="init()">
